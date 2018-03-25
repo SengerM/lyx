@@ -1,0 +1,271 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+%\date{}  % Sacamos la fecha del principio
+\hyphenation{dis-po-si-ti-vo re-gis-tro di-se-ña-do con-si-de-rar-se} %  Indicamos cómo separar las palabras. Cada palabra se separa con un espacio.
+% ---------------------------------------------------------------
+\usepackage[most]{tcolorbox} % Permite hacer "box" con colores para destacar cosas.
+\usepackage{lmodern} % Parece que mejora el aspecto de las fuentes vectoriales o algo asi
+\usepackage[T1]{fontenc} % Utiliza un cifrado de 8 bits para los caracteres permitiendo usar los acentuados sin problemas
+\usepackage{float}
+\usepackage{units}
+\usepackage{graphicx}
+\usepackage{esint}
+\usepackage{mathrsfs}
+\usepackage{dsfont}
+\usepackage{amsmath} % Si no pongo esto me tira el error  de "\iint already defined..."
+\usepackage{sectsty} % Esto es para cambiar el color y estilo de los títulos de secciones.
+\usepackage{xcolor} % No sé por qué hay dos paquetes de colores.
+\usepackage{color} % No sé por qué hay dos paquetes de colores.
+\usepackage{placeins} % Es para que los flotantes no se vallan a cualquier lado.  Para usar "placeins" colocar codigo TeX en forma de \FloatBarrier y los flotantes no pasan de ahi.
+\usepackage{caption}
+% ---------------------------------------------------------------------------------------------
+\definecolor{my_gray}{RGB}{200, 200, 200} % Este es el que uso en las ecuaciones con el comando '\GRISCLARO'
+% Estilo de títulos de secciones, subsecciones, etc.
+\chapterfont{\bfseries\sffamily\color[rgb]{.1,.1,.3}}
+\sectionfont{\bfseries\sffamily\color[rgb]{.1,.1,.4}}
+\subsectionfont{\bfseries\sffamily\color[rgb]{.2,.2,.6}}
+\subsubsectionfont{\bfseries\sffamily\color[rgb]{.2,.2,.8}}
+\paragraphfont{\bfseries\sffamily\color[rgb]{.2,.2,.8}}
+% Colores para los listados de código
+\definecolor{comentarios_color}{RGB}{190, 190, 190}
+\definecolor{cadenas_color}{RGB}{57, 167, 157}
+\definecolor{keyword_color}{RGB}{100,100,180}
+\definecolor{fondocodigo_color}{RGB}{250, 255, 255}
+\definecolor{identifier_color}{RGB}{50,50,120}
+% ---------------------------------------------------------------------------------------------
+% Configuración de epígrafes
+\DeclareCaptionFont{CaptionLabel}{\color[rgb]{.1,.1,.7}\bfseries\sffamily}
+\DeclareCaptionFont{CaptionText}{\color[rgb]{.3,.3,.8}}
+\captionsetup[figure]{margin=40pt,font=normalsize,labelfont={CaptionLabel,bf},textfont=CaptionText}
+\captionsetup[table]{margin=40pt,font=normalsize,labelfont={CaptionLabel,bf},textfont=CaptionText}
+% ---------------------------------------------------------------------------------------------
+% Definiciones de 'tcolorbox':
+\definecolor{CalculosAuxiliaresBoxBackgroundColor}{RGB}{240, 240, 240}
+\definecolor{CalculosAuxiliaresBoxFrameColor}{RGB}{80, 80, 190}
+\definecolor{ComentarioBoxBackgroundColor}{RGB}{240, 240, 240}
+\definecolor{ComentarioBoxFrameColor}{RGB}{160, 160, 160}
+\definecolor{EcuacionImportanteBoxBackgroundColor}{RGB}{240, 255, 240}
+\definecolor{EcuacionImportanteBoxFrameColor}{RGB}{50, 160, 50}
+
+\newtcolorbox{CalculosAuxiliares} {
+title=\bfseries\sffamily Cálculos Auxiliares,
+colback=CalculosAuxiliaresBoxBackgroundColor,
+colframe=CalculosAuxiliaresBoxFrameColor,
+center, 
+valign=top, 
+halign=left,
+%before skip=0.8cm, % Espacio en blanco antes del recuadro.
+%after skip=1.2cm, % Espacio en blanco después del recuadro.
+left = 2mm,
+right = 2mm,
+breakable,
+enhanced
+}
+
+\newtcolorbox{Comentario}[1] {
+title=\bfseries\sffamily #1,
+colback=ComentarioBoxBackgroundColor,
+colframe=ComentarioBoxFrameColor,
+center, 
+valign=top, 
+halign=left,
+%before skip=0.8cm, % Espacio en blanco antes del recuadro.
+%after skip=1.2cm, % Espacio en blanco después del recuadro.
+breakable,
+enhanced
+}
+
+\newtcolorbox{Importante}[1] {
+title=\bfseries\sffamily #1,
+colback=EcuacionImportanteBoxBackgroundColor,
+colframe=EcuacionImportanteBoxFrameColor,
+center, 
+valign=top, 
+halign=left,
+before skip=1cm, % Espacio en blanco antes del recuadro.
+after skip=1cm, % Espacio en blanco después del recuadro.
+breakable,
+enhanced
+}
+% ----------------------------------------------------------------------------------------------
+\hypersetup{ % Esto es para los "botones" de citas y referencias no tengan un cuadrado horrible alrededor.
+    colorlinks,
+    linkcolor={blue!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue}
+}
+% ----------------------------------------------------------------------------------------------
+\edef\timestamp{%
+  \the\year
+  \two@digits\month
+  \two@digits\day
+  \two@digits{\numexpr(\time*2 - 59)/120\relax}%
+  \two@digits{\numexpr\time - 60*\numexpr(\time*2 - 59)/120\relax\relax}%
+}
+\end_preamble
+\use_default_options true
+\begin_modules
+customHeadersFooters
+\end_modules
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1cm
+\topmargin 2cm
+\rightmargin 1cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\listings_params "keywordstyle={\color{keyword_color}\ttfamily\bfseries},commentstyle={\color{comentarios_color}\itshape},emphstyle={\color{red}},breaklines=true,basicstyle={\ttfamily},stringstyle={\color{cadenas_color}},identifierstyle={\color{identifier_color}},backgroundcolor={\color{fondocodigo_color}},keepspaces=true,numbers=left,xleftmargin=2em,frame=leftline,rulecolor={\color{black}},numbersep=5pt,tabsize=3"
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ifdefined
+\backslash
+MacrosDeLaMateria
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+else
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand*{
+\backslash
+MacrosDeLaMateria}{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+Esto es un comentario, no se imprime en el PDF.
+\end_layout
+
+\begin_layout Plain Layout
+En este archivo podés definir todas las macros que son específicas de esta
+ materia.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\KET}[1]{\left|#1\right\rangle }
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fi
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
