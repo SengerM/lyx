@@ -343,7 +343,7 @@ VECTOR
 
  (nota
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Las macros conviene definirlas siempre al principio del documento y que
@@ -518,7 +518,7 @@ Podemos definir macros que nos permitan hacer cosas de colores, por ejemplo
  
 \begin_inset Formula 
 \[
-\RED{\text{Esto es rojo }r\PARENTESIS x}\ESPACIOLARGO\GREEN{\text{Esto es verde }g\PARENTESIS x}\ESPACIOLARGO\BLUE{\text{Esto es azul }b\PARENTESIS x}
+\RED{\text{Esto es rojo }f\PARENTESIS x}\ESPACIOLARGO\BLUE{\text{Esto es azul }g\PARENTESIS x}\ESPACIOLARGO\GREEN{\text{Esto es verde }h\PARENTESIS x}
 \]
 
 \end_inset
@@ -602,83 +602,12 @@ control+alt
 \CORCHETES{\begin{matrix}a & b & c\\
 d & e & f\\
 g & h & i
-\end{matrix}}\GRAY{\rightarrow\text{Tardé 10 segundos en crear esta matriz, crucial durante una clase}}
+\end{matrix}}\GRAY{\rightarrow\text{Tardé 10 segundos en crear esta matriz, crucial en una clase}}
 \]
 
 \end_inset
 
  
-\end_layout
-
-\begin_layout Section
-Código fuente
-\end_layout
-
-\begin_layout Standard
-Se puede ver el código fuente 
-\emph on
-on the fly
-\emph default
- yendo al menú 
-\begin_inset Quotes eld
-\end_inset
-
-Ver
-\begin_inset Formula $\rightarrow$
-\end_inset
-
-View source
-\begin_inset Quotes erd
-\end_inset
-
- y luego en el menú que emerge seleccionar 
-\begin_inset Quotes eld
-\end_inset
-
-Párrafo actual
-\begin_inset Quotes erd
-\end_inset
-
- o 
-\begin_inset Quotes eld
-\end_inset
-
-Fuente completa
-\begin_inset Quotes erd
-\end_inset
-
- o la opción que se desee.
- 
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename 2.svg
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Preámbulo y configuración del documento
-\end_layout
-
-\begin_layout Standard
-La configuración del documento y el preámbulo están en el menú 
-\begin_inset Quotes eld
-\end_inset
-
-Documento 
-\begin_inset Formula $\rightarrow$
-\end_inset
-
- Configuración...
-\begin_inset Quotes erd
-\end_inset
-
-.
 \end_layout
 
 \end_body
