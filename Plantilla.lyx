@@ -90,6 +90,19 @@ customHeadersFooters
 
 \begin_body
 
+\begin_layout Title
+Plantilla para tomar apuntes con Lyx
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
@@ -101,22 +114,10 @@ filename "macros2018.lyx"
 \end_layout
 
 \begin_layout Standard
+\align left
 \begin_inset CommandInset include
 LatexCommand input
 filename "macros_de_la_materia.lyx"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Title
-Plantilla para tomar apuntes con Lyx
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset toc
-LatexCommand tableofcontents
 
 \end_inset
 
@@ -358,7 +359,7 @@ en cualquier lado
 
  como acabo de hacer.
  A menos que sea sumamente necesario, es buena práctica definir todo al
- principio.
+ principio y no modificarlo en el medio del documento.
 \end_layout
 
 \end_inset
@@ -435,7 +436,8 @@ así nomás
 \end_layout
 
 \begin_layout Standard
-o bien las podemos añadir con un flotante (ver fig.
+o bien las podemos añadir con un flotante al cual podemos añadirle un epígrafe
+ y hacer referencia (ver fig.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -531,8 +533,8 @@ comunes
 \begin_inset Quotes erd
 \end_inset
 
-, podemos definir una macro que nos permita usar cualquier color como la
- siguiente 
+ tipo acceso rápido, pero podemos definir una macro que nos permita usar
+ cualquier color como la siguiente 
 \begin_inset Formula 
 \[
 \COLOR{Z=\sum_{i}e^{\beta\epsilon_{i}}}{yellow}\ESPACIOLARGO\COLOR{Z=\sum_{i}e^{\beta\epsilon_{i}}}{yellow!60!black!40!red}
@@ -540,6 +542,42 @@ comunes
 
 \end_inset
 
+ Obviamente al ser más general se vuelve más lenta de usar (en una clase
+ no querés estar tipeando 
+\begin_inset Quotes eld
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang english
+yellow!60!black!40!red
+\begin_inset Quotes erd
+\end_inset
+
+, simplemente querés algo rápido)
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang spanish
+.
  Como las macros anteriores no tienen 
 \begin_inset Quotes eld
 \end_inset
@@ -548,7 +586,8 @@ soporte Lyx
 \begin_inset Quotes erd
 \end_inset
 
- entonces en Lyx se ven feas, pero cuando se exportan el PDF queda bien.
+ entonces en Lyx se ven feas (en Lyx), pero cuando se exportan el PDF queda
+ bien.
  
 \end_layout
 
@@ -573,6 +612,11 @@ cancelto
 
 \end_inset
 
+ y podemos cancelar cosas con colores, como por ejemplo 
+\begin_inset Formula $\REDCANCEL{\hbar}$
+\end_inset
+
+.
  
 \end_layout
 
@@ -648,7 +692,7 @@ Fuente completa
 \end_inset
 
  o la opción que se desee.
- 
+ Aparecerá algo así:
 \end_layout
 
 \begin_layout Standard
@@ -679,6 +723,80 @@ Documento
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+section{Podés esccribir en Latex}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si querés podés escribir cosas en Latex.
+ Basta con pulsar 
+\family typewriter
+ctrl+L
+\family default
+ y tipear.
+ Por ejemplo: 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+int _0 ^
+\backslash
+infty f(x) dx = 0$
+\end_layout
+
+\end_inset
+
+.
+ Podés insertar una página nueva, por ejemplo, tipeando en Latex 
+\family typewriter
+
+\backslash
+newpage
+\family default
+.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage 
+\end_layout
+
+\end_inset
+
+ Y acá estamos en una página nueva.
+ De todos modos la idea de Lyx es no tipear en Latex, pero se puede...
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename 3.svg
+
+\end_inset
+
+
 \end_layout
 
 \end_body
