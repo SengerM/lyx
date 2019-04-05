@@ -523,7 +523,7 @@ Units
 
 \begin_layout Standard
 \begin_inset FormulaMacro
-\newcommand{\MILI}[1]{\text{ m}\unit{#1}}
+\newcommand{\MILLI}[1]{\text{ m}\unit{#1}}
 \end_inset
 
 
