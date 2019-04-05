@@ -338,5 +338,48 @@ Autocompletar
  Alguien que no sabe Latex puede aprender usando Lyx (como hice yo).
 \end_layout
 
+\begin_layout Section
+Las imágenes
+\end_layout
+
+\begin_layout Standard
+Para hacer dibujos Alf usa 
+\begin_inset CommandInset href
+LatexCommand href
+name "Inkscape"
+target "https://inkscape.org/es/"
+literal "false"
+
+\end_inset
+
+.
+ Se trata de un programa para crear gráficos vectoriales que está disponible
+ 
+\begin_inset Formula $\forall$
+\end_inset
+
+ sistema operativo estándar.
+ Lyx e Inkscape son amigos lo cual hace que se pueda importar de una las
+ imágenes en el formato nativo de Inkscape y obtener resultados como el
+ siguiente:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename imagen_de_ejemplo.svg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esta facilidad de uso es excelente para una clase.
+ En cuanto a la calidad de la imagen en el PDF exportado, como se puede
+ ver, es óptima.
+ 
+\end_layout
+
 \end_body
 \end_document
