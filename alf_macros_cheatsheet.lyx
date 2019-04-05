@@ -78,7 +78,7 @@ customHeadersFooters
 \rightmargin 1cm
 \bottommargin 2cm
 \secnumdepth 3
-\tocdepth 3
+\tocdepth 4
 \paragraph_separation indent
 \paragraph_indentation default
 \is_math_indent 0
@@ -110,9 +110,9 @@ filename "alf_physics_macros.lyx"
 
 \begin_layout Standard
 \begin_inset FormulaMacro
-\newcommand{\MATRIXEXAMPLE}{\begin{matrix}A\PARENTHESES x &  0  &  0\\
- 0 &  L\PARENTHESES x  &  0\\
- 0 &  0  & F\PARENTHESES x 
+\newcommand{\MATRIXEXAMPLE}{\begin{matrix}A\PARENTHESES x  &  0  &  0\\
+ 0  &  L\PARENTHESES x  &  0\\
+ 0  &  0  &  F\PARENTHESES x 
 \end{matrix}}
 \end_inset
 
@@ -121,7 +121,7 @@ filename "alf_physics_macros.lyx"
 
 \begin_layout Standard
 \begin_inset FormulaMacro
-\newcommand{\FRACEXAMPLE}{\frac{f(x)}{g(x)}}
+\newcommand{\FRACEXAMPLE}[1][x]{\frac{f(#1)}{g(#1)}}
 \end_inset
 
 
@@ -151,6 +151,15 @@ texttt{#1}}}
 
 \begin_layout Title
 Alf's macros cheatsheet
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -199,7 +208,7 @@ Generates two bars according to the typical notation for the absolute value.
  Examples: 
 \begin_inset Formula 
 \[
-\ABS x\SPACELONG\ABS{\FRACEXAMPLE}\SPACELONG\ABS{\MATRIXEXAMPLE}
+\ABS x\SPACELONG\ABS{{\FRACEXAMPLE}}\SPACELONG\ABS{\MATRIXEXAMPLE}
 \]
 
 \end_inset
@@ -242,7 +251,7 @@ Generates two parentheses.
  Examples 
 \begin_inset Formula 
 \[
-\PARENTHESES x\SPACELONG\PARENTHESES{\FRACEXAMPLE}\SPACELONG\PARENTHESES{\MATRIXEXAMPLE}
+\PARENTHESES x\SPACELONG\PARENTHESES{{\FRACEXAMPLE}}\SPACELONG\PARENTHESES{\MATRIXEXAMPLE}
 \]
 
 \end_inset
@@ -284,7 +293,7 @@ Draws two square brackets.
  Examples: 
 \begin_inset Formula 
 \[
-\SQUAREBRACKETS x\SPACELONG\SQUAREBRACKETS{\FRACEXAMPLE}\SPACELONG\SQUAREBRACKETS{\MATRIXEXAMPLE}
+\SQUAREBRACKETS x\SPACELONG\SQUAREBRACKETS{{\FRACEXAMPLE}}\SPACELONG\SQUAREBRACKETS{\MATRIXEXAMPLE}
 \]
 
 \end_inset
@@ -326,7 +335,7 @@ Draws two curly braces.
  Examples:
 \begin_inset Formula 
 \[
-\CBRACES x\SPACELONG\CBRACES{\FRACEXAMPLE}\SPACELONG\CBRACES{\MATRIXEXAMPLE}
+\CBRACES x\SPACELONG\CBRACES{{\FRACEXAMPLE}}\SPACELONG\CBRACES{\MATRIXEXAMPLE}
 \]
 
 \end_inset
@@ -463,7 +472,7 @@ Places a left square bracket.
  Examples:
 \begin_inset Formula 
 \[
-\LSQUAREBRACKET x\SPACELONG\LSQUAREBRACKET{\FRACEXAMPLE}\SPACELONG\LSQUAREBRACKET{\MATRIXEXAMPLE}
+\LSQUAREBRACKET x\SPACELONG\LSQUAREBRACKET{{\FRACEXAMPLE}}\SPACELONG\LSQUAREBRACKET{\MATRIXEXAMPLE}
 \]
 
 \end_inset
@@ -505,7 +514,7 @@ Places a right square bracket.
  Examples:
 \begin_inset Formula 
 \[
-\RSQUAREBRACKET x\SPACELONG\RSQUAREBRACKET{\FRACEXAMPLE}\SPACELONG\RSQUAREBRACKET{\MATRIXEXAMPLE}
+\RSQUAREBRACKET x\SPACELONG\RSQUAREBRACKET{{\FRACEXAMPLE}}\SPACELONG\RSQUAREBRACKET{\MATRIXEXAMPLE}
 \]
 
 \end_inset
@@ -551,7 +560,7 @@ mean value
  Examples:
 \begin_inset Formula 
 \[
-\ANGLEBRACKETS x\SPACELONG\ANGLEBRACKETS{\FRACEXAMPLE}\SPACELONG\ANGLEBRACKETS{\MATRIXEXAMPLE}
+\ANGLEBRACKETS x\SPACELONG\ANGLEBRACKETS{{\FRACEXAMPLE}}\SPACELONG\ANGLEBRACKETS{\MATRIXEXAMPLE}
 \]
 
 \end_inset
@@ -1304,7 +1313,1600 @@ literal "false"
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Subsection
+Vector notation
+\end_layout
+
+\begin_layout Standard
+The macros for vectors in 
+\emph on
+alf physics macros
+\emph default
+ are only two: 
+\backslash
+VECTOR and 
+\backslash
+VERSOR.
+ This is to help the user to maintain a unified notation along the document.
+ This two macros caught the concept of a vector instead of the notation
+ of a vector.
+ When you need a vector, just call one of this macros.
+ By default this macros convert the symbol to bold: 
+\begin_inset Formula 
+\[
+\begin{aligned}\text{Non vectors}\rightarrow &  &  & a,b,c,\alpha,\beta,\gamma\\
+\text{Vectors}\rightarrow &  &  & \VECTOR a,\VECTOR b,\VECTOR c,\VECTOR{\alpha},\VECTOR{\beta},\VECTOR{\gamma}
+\end{aligned}
+\]
+
+\end_inset
+
+ If you want to use other notations like 
+\begin_inset Formula $\vec{a}$
+\end_inset
+
+, 
+\begin_inset Formula $\bar{a}$
+\end_inset
+
+ or 
+\begin_inset Formula $\underline{a}$
+\end_inset
+
+ you can either use the default commands included in Lyx or (yet better)
+ modify the 
+\backslash
+VECTOR macro in 
+\emph on
+alf physics macros
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+MACRONAME{
+\end_layout
+
+\end_inset
+
+
+\backslash
+VECTOR{#1}
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Notation for vectors.
+ Example: 
+\begin_inset Formula $\VECTOR r$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+MACRONAME{
+\end_layout
+
+\end_inset
+
+
+\backslash
+VERSOR{#1}
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Notation for versors (unit length vectors).
+ Example: 
+\begin_inset Formula $\VERSOR r$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Derivatives
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+MACRONAME{
+\end_layout
+
+\end_inset
+
+
+\backslash
+DIFFERENTIAL
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Differential symbol: 
+\begin_inset Formula $\DIFFERENTIAL$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+MACRONAME{
+\end_layout
+
+\end_inset
+
+
+\backslash
+CURL
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Curl symbol: 
+\begin_inset Formula $\CURL$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+MACRONAME{
+\end_layout
+
+\end_inset
+
+
+\backslash
+GRADIENT
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Gradient symbol: 
+\begin_inset Formula $\GRADIENT$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+MACRONAME{
+\end_layout
+
+\end_inset
+
+
+\backslash
+DIVERGENCE
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Divergence symbol: 
+\begin_inset Formula $\DIVERGENCE$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+MACRONAME{
+\end_layout
+
+\end_inset
+
+
+\backslash
+LAPLACIAN
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Laplacian symbol: 
+\begin_inset Formula $\LAPLACIAN$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+MACRONAME{
+\end_layout
+
+\end_inset
+
+
+\backslash
+EVALUATEDAT{#1}{#2}{#3}
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\EVALUATEDAT{\#1}{\#2}{\#3}$
+\end_inset
+
+ Notation to indicate that something is evaluated somewhere, generally used
+ after integration.
+ Examples: 
+\begin_inset Formula 
+\[
+\EVALUATEDAT x8{}=8\SPACELONG\EVALUATEDAT{{\FRACEXAMPLE[x]}}{x=3}{x=2}=\FRACEXAMPLE[3]-\FRACEXAMPLE[2]\SPACELONG\EVALUATEDAT{\SQUAREBRACKETS{\MATRIXEXAMPLE}}{x\to\infty}{}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Units
+\end_layout
+
+\begin_layout Standard
+Use this macros when you need to specify some unit of measurement, for example
  
+\begin_inset Formula $1\KILO g$
+\end_inset
+
+.
+ This macros automatically left the space between the number and the unit,
+ and use non-emphasis style.
+ You can use many of the 
+\begin_inset CommandInset href
+LatexCommand href
+name "metric prefixes"
+target "https://en.wikipedia.org/wiki/Metric_prefix"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+MACRONAME{
+\end_layout
+
+\end_inset
+
+
+\backslash
+TERA{#1}
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Metric prefix for 
+\emph on
+tera
+\emph default
+.
+ Example: 
+\begin_inset Formula $1\TERA B\equiv10^{12}\UNIT{bytes}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+MACRONAME{
+\end_layout
+
+\end_inset
+
+
+\backslash
+GIGA{#1}
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Metric prefix for 
+\emph on
+giga
+\emph default
+.
+ Example: 
+\begin_inset Formula $1\GIGA{pc}\equiv3262\TIMESTENTOTHE 6\UNIT{light\ years}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+MACRONAME{
+\end_layout
+
+\end_inset
+
+
+\backslash
+MEGA{#1}
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Metric prefix for 
+\emph on
+mega
+\emph default
+.
+ Example: 
+\begin_inset Formula $1\MEGA{\$}\equiv\text{one millionaire}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+MACRONAME{
+\end_layout
+
+\end_inset
+
+
+\backslash
+KILO{#1}
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Metric prefix for 
+\emph on
+kilo
+\emph default
+.
+ Example: 
+\begin_inset Formula $1\KILO g$
+\end_inset
+
+ of potatoes.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+MACRONAME{
+\end_layout
+
+\end_inset
+
+
+\backslash
+UNIT{#1}
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Unit notation with no prefix.
+ Example: 
+\begin_inset Formula $2\UNIT V$
+\end_inset
+
+ is 
+\emph on
+two volts 
+\emph default
+and 
+\begin_inset Formula $2V$
+\end_inset
+
+ is 
+\emph on
+two times 
+\begin_inset Formula $V$
+\end_inset
+
+
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+MACRONAME{
+\end_layout
+
+\end_inset
+
+
+\backslash
+CENTI{#1}
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Metric prefix for 
+\emph on
+centi
+\emph default
+.
+ Example: 
+\begin_inset Formula $1\UNIT m=100\CENTI m$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+MACRONAME{
+\end_layout
+
+\end_inset
+
+
+\backslash
+MILLI{#1}
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Metric prefix for 
+\emph on
+milli
+\emph default
+.
+ Example: 
+\begin_inset Formula $1\MILLI g$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+MACRONAME{
+\end_layout
+
+\end_inset
+
+
+\backslash
+MICRO{#1}
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Metric prefix for 
+\emph on
+micro
+\emph default
+.
+ Example: We need a 
+\begin_inset Formula $10\MICRO F$
+\end_inset
+
+ capacitor.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+MACRONAME{
+\end_layout
+
+\end_inset
+
+
+\backslash
+NANO{#1}
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Metric prefix for 
+\emph on
+nano
+\emph default
+.
+ Example: Visible spectrum is about 
+\begin_inset Formula $550\NANO m$
+\end_inset
+
+ wavelength.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+MACRONAME{
+\end_layout
+
+\end_inset
+
+
+\backslash
+PICO{#1}
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Metric prefix for 
+\emph on
+pico
+\emph default
+.
+ Example: 
+\begin_inset Formula $1\PICO m=10^{-12}\UNIT m$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+MACRONAME{
+\end_layout
+
+\end_inset
+
+
+\backslash
+FEMTO{#1}
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Metric prefix for 
+\emph on
+femto
+\emph default
+.
+ Example: 
+\begin_inset Formula $1\FEMTO F=10^{-15}\UNIT F$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+MACRONAME{
+\end_layout
+
+\end_inset
+
+
+\backslash
+TIMESTENTOTHE{#1}
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\TIMESTENTOTHE{\#1}$
+\end_inset
+
+ Exponential notation.
+ Example 
+\begin_inset Formula $4.5\TIMESTENTOTHE{-6}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Probability
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+MACRONAME{
+\end_layout
+
+\end_inset
+
+
+\backslash
+PROBABILITY{#1}
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Probability function 
+\begin_inset Formula $\PROBABILITY{\#1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Colors
+\end_layout
+
+\begin_layout Standard
+This library provides quick access to colors in equations in Lyx.
+ This may be useful when you want to make some comment about some symbol,
+ for example.
+ There are some macros for quick access to red, green and blue colors.
+ There is also a macro that allows you to use any color.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+MACRONAME{
+\end_layout
+
+\end_inset
+
+
+\backslash
+COLOR{#1}{#2}
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This macro allows you to use any color you like.
+ #1 is the symbol (or symbols) you want to give color and #2 is the desired
+ color.
+ In #2 you can use any of the 
+\begin_inset CommandInset href
+LatexCommand href
+name "predefined colors"
+target "https://en.wikibooks.org/wiki/LaTeX/Colors#Predefined_colors"
+literal "false"
+
+\end_inset
+
+, namely 
+\emph on
+black, blue, brown, cyan, darkgray, gray, green, lightgray, lime, magenta,
+ olive, orange, pink, purple, red, teal, violet, white, yellow
+\emph default
+.
+ Examples: 
+\begin_inset Formula 
+\[
+\COLOR{f\PARENTHESES x}{brown}\SPACELONG\COLOR{{\FRACEXAMPLE}}{olive}\SPACELONG\SQUAREBRACKETS{\begin{matrix}\COLOR a{red} & \COLOR b{green} & \COLOR c{blue}\\
+\COLOR d{purple} & \COLOR e{orange} & \COLOR f{yellow}\\
+\COLOR g{pink} & \COLOR h{violet} & \COLOR i{gray}
+\end{matrix}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+MACRONAME{
+\end_layout
+
+\end_inset
+
+
+\backslash
+RED{#1}
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Quick access to red color.
+ Example: 
+\begin_inset Formula $\RED{r\PARENTHESES x}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+MACRONAME{
+\end_layout
+
+\end_inset
+
+
+\backslash
+GREEN{#1}
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Quick access to green color.
+ Example: 
+\begin_inset Formula $\GREEN{g\PARENTHESES x}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+MACRONAME{
+\end_layout
+
+\end_inset
+
+
+\backslash
+BLUE{#1}
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Quick access to blue color.
+ Example: 
+\begin_inset Formula $\BLUE{b\PARENTHESES x}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+MACRONAME{
+\end_layout
+
+\end_inset
+
+
+\backslash
+GRAY{#1}
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Quick access to gray color.
+ Example: 
+\begin_inset Formula $\GRAY{f\PARENTHESES x}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+MACRONAME{
+\end_layout
+
+\end_inset
+
+
+\backslash
+GDOWNBRACE{#1}{#2}
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Places a gray brace down the #1 argument.
+ In the #2 argument you can place some comment.
+ Examples:
+\begin_inset Formula 
+\[
+\GDOWNBRACE{\SQUAREBRACKETS{a\PARENTHESES x+l\PARENTHESES x}}{}f\PARENTHESES x=0\SPACELONG\SPACELONG\GDOWNBRACE{\SQUAREBRACKETS{a\PARENTHESES x+l\PARENTHESES x}}{=0}f\PARENTHESES x=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+MACRONAME{
+\end_layout
+
+\end_inset
+
+
+\backslash
+RDOWNBRACE{#1}{#2}
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Places a red brace down the #1 argument.
+ In the #2 argument you can place some comment.
+ Examples:
+\begin_inset Formula 
+\[
+\RDOWNBRACE{\SQUAREBRACKETS{a\PARENTHESES x+l\PARENTHESES x}}{}f\PARENTHESES x=0\SPACELONG\SPACELONG\RDOWNBRACE{\SQUAREBRACKETS{a\PARENTHESES x+l\PARENTHESES x}}{=0}f\PARENTHESES x=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+MACRONAME{
+\end_layout
+
+\end_inset
+
+
+\backslash
+BDOWNBRACE{#1}{#2}
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Places a blue brace down the #1 argument.
+ In the #2 argument you can place some comment.
+ Examples:
+\begin_inset Formula 
+\[
+\BDOWNBRACE{\SQUAREBRACKETS{a\PARENTHESES x+l\PARENTHESES x}}{}f\PARENTHESES x=0\SPACELONG\SPACELONG\BDOWNBRACE{\SQUAREBRACKETS{a\PARENTHESES x+l\PARENTHESES x}}{=0}f\PARENTHESES x=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+MACRONAME{
+\end_layout
+
+\end_inset
+
+
+\backslash
+GUPBRACE{#1}{#2}
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Places a gray brace over the #1 argument.
+ In the #2 argument you can place some comment.
+ Examples:
+\begin_inset Formula 
+\[
+\GUPBRACE{\SQUAREBRACKETS{a\PARENTHESES x+l\PARENTHESES x}}{}f\PARENTHESES x=0\SPACELONG\SPACELONG\GUPBRACE{\SQUAREBRACKETS{a\PARENTHESES x+l\PARENTHESES x}}{=0}f\PARENTHESES x=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+MACRONAME{
+\end_layout
+
+\end_inset
+
+
+\backslash
+RUPBRACE{#1}{#2}
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Places a red brace over the #1 argument.
+ In the #2 argument you can place some comment.
+ Examples:
+\begin_inset Formula 
+\[
+\RUPBRACE{\SQUAREBRACKETS{a\PARENTHESES x+l\PARENTHESES x}}{}f\PARENTHESES x=0\SPACELONG\SPACELONG\RUPBRACE{\SQUAREBRACKETS{a\PARENTHESES x+l\PARENTHESES x}}{=0}f\PARENTHESES x=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+MACRONAME{
+\end_layout
+
+\end_inset
+
+
+\backslash
+BUPBRACE{#1}{#2}
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Places a blue brace over the #1 argument.
+ In the #2 argument you can place some comment.
+ Examples:
+\begin_inset Formula 
+\[
+\BUPBRACE{\SQUAREBRACKETS{a\PARENTHESES x+l\PARENTHESES x}}{}f\PARENTHESES x=0\SPACELONG\SPACELONG\BUPBRACE{\SQUAREBRACKETS{a\PARENTHESES x+l\PARENTHESES x}}{=0}f\PARENTHESES x=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+MACRONAME{
+\end_layout
+
+\end_inset
+
+
+\backslash
+REDCANCEL{#1}
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cancellation bar in red color.
+ Examples: 
+\begin_inset Formula 
+\[
+\REDCANCEL x\SPACELONG\frac{1}{\REDCANCEL a}\PARENTHESES{a^{\REDCANCEL 2}lf+10\REDCANCEL a}=alf+10\SPACELONG\REDCANCEL{{\FRACEXAMPLE}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+MACRONAME{
+\end_layout
+
+\end_inset
+
+
+\backslash
+BLUECANCEL{#1}
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cancellation bar in blue color.
+ Examples: 
+\begin_inset Formula 
+\[
+\BLUECANCEL x\SPACELONG\frac{1}{\BLUECANCEL a}\PARENTHESES{a^{\BLUECANCEL 2}lf+10\BLUECANCEL a}=alf+10\SPACELONG\BLUECANCEL{{\FRACEXAMPLE}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+MACRONAME{
+\end_layout
+
+\end_inset
+
+
+\backslash
+REDCANCELTO{#1}{#2}
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cancellation bar with arrow and comment in red color.
+ Example 
+\begin_inset Formula 
+\[
+\lim_{x\to0}\frac{1+x}{x}\sim\REDCANCELTO{\frac{x}{x}}1=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+MACRONAME{
+\end_layout
+
+\end_inset
+
+
+\backslash
+BLUECANCELTO{#1}{#2}
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cancellation bar with arrow and comment in blue color.
+ Example 
+\begin_inset Formula 
+\[
+\lim_{x\to0}\frac{1+x}{x}\sim\BLUECANCELTO{\frac{x}{x}}1=1
+\]
+
+\end_inset
+
+
 \end_layout
 
 \end_body
