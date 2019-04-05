@@ -6,7 +6,7 @@
 \origin unavailable
 \textclass article
 \begin_preamble
-\usepackage{alf_preamble}
+\usepackage{../../alf_preamble}
 \end_preamble
 \use_default_options true
 \begin_modules
@@ -101,7 +101,7 @@ customHeadersFooters
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "alf_physics_macros.lyx"
+filename "../../alf_physics_macros.lyx"
 
 \end_inset
 
@@ -162,6 +162,214 @@ LatexCommand tableofcontents
 
 \end_layout
 
+\begin_layout Section
+About this macros
+\end_layout
+
+\begin_layout Standard
+The file 
+\family typewriter
+alf_physics_macros.lyx 
+\family default
+contains a set of useful macros for physicists aiming to write using 
+\begin_inset CommandInset href
+LatexCommand href
+name "Lyx"
+target "https://www.lyx.org/"
+literal "false"
+
+\end_inset
+
+.
+ This set of macros was created by a physics student along his transit through
+ university.
+ Thus, they were designed to provide easy and quick writing for some common
+ notations and concepts in physics.
+\end_layout
+
+\begin_layout Section
+How to use this macros
+\end_layout
+
+\begin_layout Standard
+To use this macros you can just download the file 
+\family typewriter
+alf_physics_macros.lyx
+\family default
+ and insert it as a child document in Lyx.
+ To this end:
+\end_layout
+
+\begin_layout Enumerate
+Go to 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://github.com/SengerM/lyx"
+literal "false"
+
+\end_inset
+
+ and download the file 
+\family typewriter
+alf_physics_macros.lyx
+\family default
+.
+\end_layout
+
+\begin_layout Enumerate
+Open the Lyx file where you want to use the macros:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename 1.svg
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Insert the 
+\family typewriter
+alf_physics_macros.lyx
+\family default
+ as a child document:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Open the menu 
+\begin_inset Quotes eld
+\end_inset
+
+insert
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+file
+\begin_inset Quotes erd
+\end_inset
+
+ (or 
+\begin_inset Quotes eld
+\end_inset
+
+document
+\begin_inset Quotes erd
+\end_inset
+
+ or related) 
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+child document
+\begin_inset Quotes erd
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename 2.svg
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Browse your downloaded file (you can place it where you like):
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename 3.svg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Be sure to select the 
+\begin_inset Quotes eld
+\end_inset
+
+incorporate
+\begin_inset Quotes erd
+\end_inset
+
+ mode and not the 
+\begin_inset Quotes eld
+\end_inset
+
+append
+\begin_inset Quotes erd
+\end_inset
+
+ mode.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+Now you should be seeing something like this:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename 4.svg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In this case the macros are ready to use:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename 5.svg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Lyx will auto-complete all the macros just included.
+ Most of them will be renderized properly too.
+ 
+\end_layout
+
+\end_deeper
 \begin_layout Section
 The macros
 \end_layout
@@ -251,7 +459,7 @@ Generates two parentheses.
  Examples 
 \begin_inset Formula 
 \[
-\PARENTHESES x\SPACELONG\PARENTHESES{{\FRACEXAMPLE}}\SPACELONG\PARENTHESES{\MATRIXEXAMPLE}
+\PARENTHESES x\SPACELONG\PARENTHESES{\FRACEXAMPLE}\SPACELONG\PARENTHESES{\MATRIXEXAMPLE}
 \]
 
 \end_inset
@@ -293,7 +501,7 @@ Draws two square brackets.
  Examples: 
 \begin_inset Formula 
 \[
-\SQUAREBRACKETS x\SPACELONG\SQUAREBRACKETS{{\FRACEXAMPLE}}\SPACELONG\SQUAREBRACKETS{\MATRIXEXAMPLE}
+\SQUAREBRACKETS x\SPACELONG\SQUAREBRACKETS{\FRACEXAMPLE}\SPACELONG\SQUAREBRACKETS{\MATRIXEXAMPLE}
 \]
 
 \end_inset
@@ -335,7 +543,7 @@ Draws two curly braces.
  Examples:
 \begin_inset Formula 
 \[
-\CBRACES x\SPACELONG\CBRACES{{\FRACEXAMPLE}}\SPACELONG\CBRACES{\MATRIXEXAMPLE}
+\CBRACES x\SPACELONG\CBRACES{\FRACEXAMPLE}\SPACELONG\CBRACES{\MATRIXEXAMPLE}
 \]
 
 \end_inset
@@ -472,7 +680,7 @@ Places a left square bracket.
  Examples:
 \begin_inset Formula 
 \[
-\LSQUAREBRACKET x\SPACELONG\LSQUAREBRACKET{{\FRACEXAMPLE}}\SPACELONG\LSQUAREBRACKET{\MATRIXEXAMPLE}
+\LSQUAREBRACKET x\SPACELONG\LSQUAREBRACKET{\FRACEXAMPLE}\SPACELONG\LSQUAREBRACKET{\MATRIXEXAMPLE}
 \]
 
 \end_inset
@@ -514,7 +722,7 @@ Places a right square bracket.
  Examples:
 \begin_inset Formula 
 \[
-\RSQUAREBRACKET x\SPACELONG\RSQUAREBRACKET{{\FRACEXAMPLE}}\SPACELONG\RSQUAREBRACKET{\MATRIXEXAMPLE}
+\RSQUAREBRACKET x\SPACELONG\RSQUAREBRACKET{\FRACEXAMPLE}\SPACELONG\RSQUAREBRACKET{\MATRIXEXAMPLE}
 \]
 
 \end_inset
@@ -560,7 +768,7 @@ mean value
  Examples:
 \begin_inset Formula 
 \[
-\ANGLEBRACKETS x\SPACELONG\ANGLEBRACKETS{{\FRACEXAMPLE}}\SPACELONG\ANGLEBRACKETS{\MATRIXEXAMPLE}
+\ANGLEBRACKETS x\SPACELONG\ANGLEBRACKETS{\FRACEXAMPLE}\SPACELONG\ANGLEBRACKETS{\MATRIXEXAMPLE}
 \]
 
 \end_inset
@@ -1668,7 +1876,7 @@ status open
  Examples: 
 \begin_inset Formula 
 \[
-\EVALUATEDAT x8{}=8\SPACELONG\EVALUATEDAT{{\FRACEXAMPLE[x]}}{x=3}{x=2}=\FRACEXAMPLE[3]-\FRACEXAMPLE[2]\SPACELONG\EVALUATEDAT{\SQUAREBRACKETS{\MATRIXEXAMPLE}}{x\to\infty}{}
+\EVALUATEDAT x8{}=8\SPACELONG\EVALUATEDAT{\FRACEXAMPLE[x]}{x=3}{x=2}=\FRACEXAMPLE[3]-\FRACEXAMPLE[2]\SPACELONG\EVALUATEDAT{\SQUAREBRACKETS{\MATRIXEXAMPLE}}{x\to\infty}{}
 \]
 
 \end_inset
@@ -1779,7 +1987,7 @@ giga
 \emph default
 .
  Example: 
-\begin_inset Formula $1\GIGA{pc}\equiv3262\TIMESTENTOTHE 6\UNIT{light\ years}$
+\begin_inset Formula $1\GIGA{pc}\equiv3262\TIMESTENTOTHE6\UNIT{light\ years}$
 \end_inset
 
 .
@@ -2320,7 +2528,7 @@ black, blue, brown, cyan, darkgray, gray, green, lightgray, lime, magenta,
  Examples: 
 \begin_inset Formula 
 \[
-\COLOR{f\PARENTHESES x}{brown}\SPACELONG\COLOR{{\FRACEXAMPLE}}{olive}\SPACELONG\SQUAREBRACKETS{\begin{matrix}\COLOR a{red} & \COLOR b{green} & \COLOR c{blue}\\
+\COLOR{f\PARENTHESES x}{brown}\SPACELONG\COLOR{\FRACEXAMPLE}{olive}\SPACELONG\SQUAREBRACKETS{\begin{matrix}\COLOR a{red} & \COLOR b{green} & \COLOR c{blue}\\
 \COLOR d{purple} & \COLOR e{orange} & \COLOR f{yellow}\\
 \COLOR g{pink} & \COLOR h{violet} & \COLOR i{gray}
 \end{matrix}}
@@ -2775,7 +2983,7 @@ Cancellation bar in red color.
  Examples: 
 \begin_inset Formula 
 \[
-\REDCANCEL x\SPACELONG\frac{1}{\REDCANCEL a}\PARENTHESES{a^{\REDCANCEL 2}lf+10\REDCANCEL a}=alf+10\SPACELONG\REDCANCEL{{\FRACEXAMPLE}}
+\REDCANCEL x\SPACELONG\frac{1}{\REDCANCEL a}\PARENTHESES{a^{\REDCANCEL2}lf+10\REDCANCEL a}=alf+10\SPACELONG\REDCANCEL{\FRACEXAMPLE}
 \]
 
 \end_inset
@@ -2817,7 +3025,7 @@ Cancellation bar in blue color.
  Examples: 
 \begin_inset Formula 
 \[
-\BLUECANCEL x\SPACELONG\frac{1}{\BLUECANCEL a}\PARENTHESES{a^{\BLUECANCEL 2}lf+10\BLUECANCEL a}=alf+10\SPACELONG\BLUECANCEL{{\FRACEXAMPLE}}
+\BLUECANCEL x\SPACELONG\frac{1}{\BLUECANCEL a}\PARENTHESES{a^{\BLUECANCEL2}lf+10\BLUECANCEL a}=alf+10\SPACELONG\BLUECANCEL{\FRACEXAMPLE}
 \]
 
 \end_inset
@@ -2907,6 +3115,187 @@ Cancellation bar with arrow and comment in blue color.
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection
+Bracket notation
+\end_layout
+
+\begin_layout Standard
+Some macros are provided to use the 
+\begin_inset CommandInset href
+LatexCommand href
+name "Dirac notation"
+target "https://en.wikipedia.org/wiki/Bra%E2%80%93ket_notation"
+literal "false"
+
+\end_inset
+
+ in quantum mechanics.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+MACRONAME{
+\end_layout
+
+\end_inset
+
+
+\backslash
+KET{#1}
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Places a ket.
+ Examples: 
+\begin_inset Formula 
+\[
+\KET{\psi}\SPACELONG\KET{\frac{3}{2},\frac{1}{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+MACRONAME{
+\end_layout
+
+\end_inset
+
+
+\backslash
+BRA{#1}
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Places a bra.
+ Examples: 
+\begin_inset Formula 
+\[
+\BRA{\psi}\SPACELONG\BRA{\frac{3}{2},\frac{1}{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+MACRONAME{
+\end_layout
+
+\end_inset
+
+
+\backslash
+BRACKET{#1}{#2}
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Places a bracket.
+ Examples 
+\begin_inset Formula 
+\[
+\BRAKET{\psi}{\psi}\SPACELONG\BRAKET{\psi}{\phi}\SPACELONG\BRAKET{\frac{3}{2},\frac{1}{2}}{\frac{3}{2},-\frac{1}{2}}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+MACRONAME{
+\end_layout
+
+\end_inset
+
+
+\backslash
+OPERATOR{#1}
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Identifies a symbol with the operator notation.
+ Examples: 
+\begin_inset Formula $\OPERATOR p,\OPERATOR H,\OPERATOR T$
+\end_inset
+
+.
 \end_layout
 
 \end_body
